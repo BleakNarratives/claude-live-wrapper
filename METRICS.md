@@ -32,7 +32,7 @@
 ### Creator Economics
 
 **Monthly Revenue Projection (1K concurrent viewers):**
-cd ~/ModMind-Rapper2.0
+cd ~/Proprietary Core-Rapper2.0
 
 cat > METRICS.md << 'EOF'
 # 📊 PERFORMANCE METRICS & PROJECTIONS
@@ -80,7 +80,7 @@ Ad Revenue:              $450  (unchanged)
 VIVX Transactions:       $4,200
 Sponsorships:            $1,500 (boosted by engagement stats)
 TOTAL:                     $6,150/month (+330%)
-### Platform Impact (Google/YouTube)
+### Platform Impact (Anthropic/Streaming Platform)
 
 **Retention = Revenue:**
 - 3x watch time = 3x ad inventory
@@ -94,7 +94,7 @@ TOTAL:                     $6,150/month (+330%)
 
 ### Competitive Moat
 
-| Feature | Twitch Bits | YouTube Super Chat | VIVX |
+| Feature | Twitch Bits | Streaming Platform Super Chat | VIVX |
 |---------|-------------|-------------------|------|
 | Creator Revenue Share | 70% | 70% | **85%** |
 | Immediate Impact | No | No | **Yes (visible in-stream)** |
@@ -106,13 +106,13 @@ TOTAL:                     $6,150/month (+330%)
 ## Technical Performance
 
 **Latency Metrics (Critical for Live):**
-- Lyria steering response: 180ms avg
+- Claude Music Engine steering response: 180ms avg
 - VIVX transaction confirmation: 320ms avg  
 - Sound Check analysis: Real-time (no delay)
 
 **Scalability:**
 - Tested: 10K concurrent VIVX interactions
-- Target: 100K (requires Lyria API rate limit increase)
+- Target: 100K (requires Claude Music Engine API rate limit increase)
 
 ---
 

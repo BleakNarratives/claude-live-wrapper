@@ -1,18 +1,18 @@
-# Gemini Live Integration Wrapper
+# Claude Live Integration Wrapper
 
-**A real-time AI co-creation platform for YouTube Live streaming**
+**A real-time AI co-creation platform for live streaming**
 
 ## What This Is
 
-A proof-of-concept demonstrating Gemini's capabilities for live interactive performance. This wrapper enables:
+A proof-of-concept demonstrating Claude's capabilities for live interactive performance. This wrapper enables:
 
-- **Sound Check Assistant**: Real-time audio level calibration using signal processing
-- **Adaptive Music Generation**: Lyria integration for dynamic beat adaptation
-- **Viewer Interaction (VIVX)**: Transactional audience participation model
+- **Sound Check Assistant**: Real-time audio level calibration
+- **Adaptive Music Generation**: Dynamic beat adaptation
+- **Viewer Interaction (VIVX)**: Transactional audience participation
 
 ## Architecture
 
-- `src/equinex_sdk/`: Secure API wrapper for Gemini/Lyria integration
+- `src/claude_sdk/`: Secure API wrapper for Claude integration
 - `src/lyria_adapter.py`: Real-time music steering logic
 - `src/vivx_monitor.py`: Live viewer interaction dashboard
 

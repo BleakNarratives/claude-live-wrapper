@@ -12,12 +12,12 @@ load_dotenv()
 
 class EquiNexClient:
     """
-    Client class for authenticated communication with Google AI services.
-    Handles secure API calls for Lyria steering and VIVX data retrieval.
+    Client class for authenticated communication with Anthropic AI services.
+    Handles secure API calls for Claude Music Engine steering and VIVX data retrieval.
     """
     
     def __init__(self):
-        self.GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "MOCK_GEMINI_KEY")
+        self.CLAUDE_API_KEY = os.getenv("CLAUDE_API_KEY", "MOCK_CLAUDE_KEY")
 
     def _make_api_call(self, endpoint, payload):
         """Simulates a secure, authenticated API request."""
@@ -26,12 +26,12 @@ class EquiNexClient:
         return response
 
     def steer_lyria_realtime(self, prompt, energy_level):
-        """Sends adaptive music steering command to Lyria."""
+        """Sends adaptive music steering command to Claude Music Engine."""
         endpoint = "/lyria/v1/steer"
         payload = {"prompt": prompt, "energy_level": energy_level, "timestamp": time.time()}
         
         # Logs action via internal method (handled by Analytics module in production)
-        self._log_action(f"LyriaSteer: {prompt}")
+        self._log_action(f"Claude Music EngineSteer: {prompt}")
         
         return self._make_api_call(endpoint, payload)
 

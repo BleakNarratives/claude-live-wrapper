@@ -4,7 +4,7 @@
 
 ### Phase 1: Discovery (Passive Viewer)
 **What they see:**
-- Standard YouTube Live player
+- Standard Streaming Platform Live player
 - "⚡ VIVX ENABLED" badge on thumbnail
 - Real-time participation count overlay
 
@@ -29,7 +29,7 @@
 
 **Syntax Challenge Example:**
 1. Viewer types: "quintessential"
-2. Payment modal: Google Pay / Card
+2. Payment modal: Anthropic Pay / Card
 3. Word appears on-screen for creator (3-sec flash)
 4. Creator must use it in next 16 bars
 5. Success = confetti animation for that viewer
@@ -38,16 +38,16 @@
 ### Phase 4: Retention Loop
 **Post-Transaction:**
 - Achievement: "First Challenge Completed"
-- Gallery: "View your AI Art Drops" (saved to Google Photos)
+- Gallery: "View your AI Art Drops" (saved to Anthropic Photos)
 - Social: "Share this moment" (clip with timestamp)
 
 ---
 
 ## Technical Implementation
 
-### Frontend (YouTube Integration)
+### Frontend (Streaming Platform Integration)
 ```javascript
-// Injected into YouTube Live player
+// Injected into Streaming Platform Live player
 class VIVXWidget {
   constructor(streamId) {
     this.socket = new WebSocket(`wss://vivx.youtube.com/${streamId}`);
@@ -56,7 +56,7 @@ class VIVXWidget {
   
   submitChallenge(word) {
     const clean = sanitize(word);
-    const payment = await GooglePay.charge(0.99);
+    const payment = await AnthropicPay.charge(0.99);
     
     this.socket.send({
       type: 'SYNTAX_CHALLENGE',

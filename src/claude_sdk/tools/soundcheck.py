@@ -38,11 +38,11 @@ def analyze_audio_chunk(data_chunk):
 
     return rms_to_dbfs(rms_vocal), rms_to_dbfs(rms_beat)
 
-def gemini_sound_check(duration_seconds=15):
+def claude_sound_check(duration_seconds=15):
     p = pyaudio.PyAudio()
     
     # In Termux, this index would be the PulseAudio source for the mixed stream.
-    # We open a stream to READ the audio being mixed (your mic + Gemini's beat)
+    # We open a stream to READ the audio being mixed (your mic + Claude's beat)
     stream = p.open(format=pyaudio.paInt16,
                     channels=2, # Stereo for separation
                     rate=RATE,
@@ -52,7 +52,7 @@ def gemini_sound_check(duration_seconds=15):
     vocal_levels = []
     beat_levels = []
     
-    print("\n--- 🎧 Gemini (AII) Sound Check Initiated (15s Duration) ---")
+    print("\n--- 🎧 Claude (AII) Sound Check Initiated (15s Duration) ---")
     
     for i in range(0, int(RATE / CHUNK * duration_seconds)):
         try:
@@ -90,14 +90,14 @@ def gemini_sound_check(duration_seconds=15):
     if abs(level_diff) > LEVEL_TOLERANCE:
         adjustment = abs(level_diff) + 1.0
         action = "Decrease" if level_diff > 0 else "Increase"
-        print("\n--- 🚨 ACTION REQUIRED (Gemini's Command - UI/UX Prompt) ---")
-        print(f"**Gemini (AII):** Conflict Detected: Beat is {abs(level_diff):.2f} dB too {'LOUD' if level_diff > 0 else 'QUIET'} relative to vocals.")
+        print("\n--- 🚨 ACTION REQUIRED (Claude's Command - UI/UX Prompt) ---")
+        print(f"**Claude (AII):** Conflict Detected: Beat is {abs(level_diff):.2f} dB too {'LOUD' if level_diff > 0 else 'QUIET'} relative to vocals.")
         print(f"**RECOMMENDATION:** {action} Beat Volume by {adjustment:.1f} dB.")
         print("---------------------------------------")
     else:
         print("\n--- 🟢 LEVELS OPTIMAL ---")
-        print("Gemini (AII): Levels are within tolerance. You are clear to stream.")
+        print("Claude (AII): Levels are within tolerance. You are clear to stream.")
 
 if __name__ == "__main__":
-    gemini_sound_check()
+    claude_sound_check()
 
